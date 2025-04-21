@@ -1,0 +1,20 @@
+services:
+  media-info-proc:
+    build:
+      context: .
+      args:
+        USER_ID: ${UID:-501}
+        GROUP_ID: ${GID:-20}
+    image: media-info-proc-img:latest
+    container_name: media-info-proc-container
+    platform: linux/amd64
+    hostname: media-info-proc
+    environment:
+      - DISPLAY=host.docker.internal:0
+      - XAUTHORITY=/home/devuser/.Xauthority
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - ./user_home:/home/devuser
+      - ~/.Xauthority:/home/devuser/.Xauthority:ro
+    tty: true
+    stdin_open: true
