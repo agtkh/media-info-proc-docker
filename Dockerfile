@@ -9,7 +9,7 @@ ARG GROUPNAME=devgroup
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update
-RUN apt-get -y install wget vim x11-apps python3 pip3
+RUN apt-get -y install wget vim x11-apps # python3 pip3
 
 # for praat
 RUN  apt install -y libc++1      # the C++ standard library
