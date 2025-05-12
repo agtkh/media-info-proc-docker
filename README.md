@@ -88,6 +88,9 @@ make down
 
 URL: [https://lec.chi.msys.eng.shizuoka.ac.jp/SLPex-Shzu/SLPex-Shzu20240421.tar.gz](https://lec.chi.msys.eng.shizuoka.ac.jp/SLPex-Shzu/SLPex-Shzu20240421.tar.gz)
 
+### スライド資料
+URL : https://lec.chi.msys.eng.shizuoka.ac.jp/SLPex-Shzu/SLPex-ApdxSlide202205.pdf
+
 ## コマンド集
 
 ### tar.gzの解凍

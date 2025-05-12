@@ -9,17 +9,23 @@ ARG GROUPNAME=devgroup
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update
-RUN apt-get -y install wget vim x11-apps # python3 pip3
+RUN apt-get install -y wget vim x11-apps less openjdk-11-jdk
+
+# RUN apt-get install -y python3 python3-pip
+# RUN apt-get install -y portaudio19-dev
+# RUN pip3 install pyaudio
+
+RUN apt install -y pulseaudio
 
 # for praat
-RUN  apt install -y libc++1      # the C++ standard library
-RUN  apt install -y libgtk-3-0   # the graphics toolkit
-RUN  apt install -y libpulse0    # the Pulse audio server
-RUN  apt install -y libasound2   # the ALSA audio library
-RUN  apt install -y libjack0     # the Jack audio library
-RUN  apt install -y libcanberra-gtk-module     # needed only if your system complains about missing this
-RUN apt install fonts-sil-charis # optional, but recommended
-RUN apt install fonts-sil-doulos # optional, but recommended
+RUN apt install -y libc++1      # the C++ standard library
+RUN apt install -y libgtk-3-0   # the graphics toolkit
+RUN apt install -y libpulse0    # the Pulse audio server
+RUN apt install -y libasound2   # the ALSA audio library
+RUN apt install -y libjack0     # the Jack audio library
+RUN apt install -y libcanberra-gtk-module     # needed only if your system complains about missing this
+RUN apt install -y fonts-sil-charis # optional, but recommended
+RUN apt install -y fonts-sil-doulos # optional, but recommended
 
 # 指定されたGIDでグループを作成 (既に存在する場合は無視)
 RUN groupadd -g $GROUP_ID $GROUPNAME || true

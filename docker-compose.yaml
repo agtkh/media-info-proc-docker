@@ -10,11 +10,15 @@ services:
     platform: linux/amd64
     hostname: media-info-proc
     environment:
+      - PULSE_SERVER=docker.for.mac.localhost
       - DISPLAY=host.docker.internal:0
       - XAUTHORITY=/home/devuser/.Xauthority
       - QT_X11_NO_MITSHM=1
     volumes:
       - ./user_home:/home/devuser
       - ~/.Xauthority:/home/devuser/.Xauthority:ro
+      - type: bind
+        source: ~/.config/pulse
+        target: /home/devuser/.config/pulse
     tty: true
     stdin_open: true
